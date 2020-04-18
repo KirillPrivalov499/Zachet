@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "999772165620",
+    "firebase_url": "https://firemessager-55d02.firebaseio.com",
+    "project_id": "firemessager-55d02",
+    "storage_bucket": "firemessager-55d02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999772165620:android:4c3a725ec2c33628e555a1",
+        "android_client_info": {
+          "package_name": "com.example.gorun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999772165620-iu5kk8d67k4ttl1ck8eomb85tgnjd74p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZHh_94C71h5fhM-AY6mALnOiyl_vDDy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999772165620-iu5kk8d67k4ttl1ck8eomb85tgnjd74p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_authotization"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/iron"
+    tools:context=".NewStory.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_head_au"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Authorization"
+        android:textColor="@color/black"
+        android:textSize="25sp">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/et_email_au"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
+        android:hint="Email"
+        android:textColorHint="@color/base"
+        android:textSize="30dp"
+        android:layout_below="@+id/tv_head_au"/>
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/et_email_au"
+        android:hint="Password"
+        android:textColorHint="@color/base"
+        android:textSize="30dp"
+        android:id="@+id/et_password_au"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="60dp"
+        android:layout_below="@+id/et_password_au"
+        android:text="Авторизация"
+        android:layout_weight="1"
+        android:id="@+id/btn_sign_in_au"/>
+
+    <Button
+        android:id="@+id/btn_reg_au"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        android:layout_weight="1"
+        android:text="Not registered yet?" />
+
+
+</RelativeLayout>

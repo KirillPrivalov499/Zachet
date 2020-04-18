@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/iron"
+    >
+    <TextView
+        android:id="@+id/tv_head_fr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Registration"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        >
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/et_name_fr"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_head_fr"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:hint="Name"
+        android:textColorHint="@color/base"
+        android:textSize="30sp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/et_email_fr"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="Email"
+        android:textColorHint="@color/base"
+        android:textSize="30sp"
+        android:layout_below="@+id/et_name_fr"/>
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/et_email_fr"
+        android:hint="Password"
+        android:textColorHint="@color/base"
+        android:textSize="30sp"
+        android:id="@+id/et_password_fr"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        />
+    <Spinner
+        android:id="@+id/spinner_fr"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/et_password_fr"
+        android:layout_centerHorizontal="true"
+        />
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="60dp"
+        android:layout_below="@+id/spinner_fr"
+        >
+        <Button android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Регистрация"
+            android:id="@+id/btn_registration_fr"/>
+
+    </LinearLayout>
+</RelativeLayout>
