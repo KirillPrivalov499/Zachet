@@ -6,61 +6,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/iron"
-    tools:context=".NewStory.LoginActivity">
+    tools:context=".NewStory.ui.LoginActivity">
 
-    <TextView
-        android:id="@+id/tv_head_au"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/image_login"
+        android:layout_width="73dp"
+        android:layout_height="82dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="167dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Authorization"
-        android:textColor="@color/black"
-        android:textSize="25sp">
+        android:layout_marginLeft="167dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginRight="170dp"
+        android:src="@drawable/ic_directions_run_black_24dp" />
 
-    </TextView>
 
     <EditText
-        android:layout_width="250dp"
-        android:layout_height="50dp"
         android:id="@+id/et_email_au"
+        android:layout_width="331dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/image_login"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50sp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="5dp"
         android:hint="Email"
         android:textColorHint="@color/base"
-        android:textSize="30dp"
-        android:layout_below="@+id/tv_head_au"/>
+        android:textSize="30dp" />
+
     <EditText
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/et_email_au"
-        android:hint="Password"
-        android:textColorHint="@color/base"
-        android:textSize="30dp"
         android:id="@+id/et_password_au"
+        android:layout_width="331dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/et_email_au"
+        android:layout_marginTop="3dp"
+        android:hint="Password"
+        android:layout_centerHorizontal="true"
         android:inputType="textPassword"
-        android:layout_marginTop="10dp"
-        />
+        android:textColorHint="@color/base"
+        android:textSize="30dp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="60dp"
-        android:layout_below="@+id/et_password_au"
-        android:text="Авторизация"
-        android:layout_weight="1"
-        android:id="@+id/btn_sign_in_au"/>
-
-    <Button
-        android:id="@+id/btn_reg_au"
-        style="@style/Widget.AppCompat.Button.Borderless"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sign_in_au"
+        style="@style/ButtonLoginRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/et_password_au"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="60dp"
         android:layout_weight="1"
+        android:text="Login" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_reg_au"
+        style="@style/ButtonRegiterYet"
+        android:layout_width="187dp"
+        android:layout_height="36dp"
+        android:layout_margin="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp"
+        android:layout_weight="1"
+        android:stateListAnimator="@null"
         android:text="Not registered yet?" />
 
 

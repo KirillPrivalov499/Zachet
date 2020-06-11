@@ -1,27 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.gorun">
+
+    <uses-permission
+        android:name="android.permission.ACCOUNT_MANAGER"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        tools:node="replace" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:node="replace" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_splash_run"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".NewStory.LoginActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".NewStory.ui.AddTaskForSportsmenActivity"></activity>
+        <activity
+            android:name=".NewStory.ui.DetailActivity"
+            android:parentActivityName=".NewStory.ui.ListPeopleActivity" />
+        <activity
+            android:name=".NewStory.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".NewStory.NotificationService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".NewStory.ui.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewStory.RegistrationActivity"></activity>
-        <activity android:name=".NewStory.ListPeopleActivity" />
-        <activity android:name=".NewStory.SinginActivity"></activity>
-        <activity android:name=".NewStory.ListMessages2Activity"
-            android:parentActivityName=".NewStory.ListPeopleActivity"/>
-        <activity android:name=".ChatStructure.DialogListsActivity" />
+        <activity android:name=".NewStory.ui.StravaActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="example.com"
+                    android:pathPrefix="/gorun/"
+                    android:scheme="http" />
+                <data
+                    android:host="www.example.com"
+                    android:pathPrefix="/gorun/"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewStory.ui.NavigationActivity"
+            android:label="@string/title_activity_navigation" />
+        <activity android:name=".NewStory.ui.LoginActivity" />
+        <activity android:name=".NewStory.ui.RegistrationActivity" />
+        <activity android:name=".NewStory.ui.ListPeopleActivity" />
+        <activity android:name=".NewStory.ui.SinginActivity" />
+        <activity
+            android:name=".NewStory.ui.ListMessages2Activity"
+            android:parentActivityName=".NewStory.ui.ListPeopleActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ChatTutorial.MainActivity" />
     </application>
 

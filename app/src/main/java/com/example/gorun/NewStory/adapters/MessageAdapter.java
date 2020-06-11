@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.gorun.NewStory.ListMessages2Activity;
+import com.example.gorun.NewStory.ui.ListMessages2Activity;
 import com.example.gorun.NewStory.models.Message;
 import com.example.gorun.R;
 import com.firebase.ui.database.FirebaseListAdapter;

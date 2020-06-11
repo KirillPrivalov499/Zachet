@@ -1,25 +1,44 @@
 package com.example.gorun.NewStory.adapters;
 
+import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.gorun.NewStory.CreateOrJoinNewChat;
-import com.example.gorun.NewStory.ListPeopleActivity;
+import androidx.annotation.NonNull;
+
+import com.example.gorun.NewStory.Logic.CreateOrJoinNewChat;
 import com.example.gorun.NewStory.models.User;
+import com.example.gorun.NewStory.ui.NavigationActivity;
 import com.example.gorun.R;
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.IOException;
 
 public class UsersAdapter extends FirebaseListAdapter<User> {
 
-    private ListPeopleActivity activity;
+    private NavigationActivity activity;
 
-    public UsersAdapter(ListPeopleActivity activity, Class<User> modelClass, int modelLayout, DatabaseReference ref){
-        super(activity,modelClass,modelLayout,ref);
+    public UsersAdapter(NavigationActivity activity, Class<User> modelClass, int modelLayout, DatabaseReference ref) {
+        super(activity, modelClass, modelLayout, ref);
         this.activity = activity;
     }
 
@@ -28,10 +47,27 @@ public class UsersAdapter extends FirebaseListAdapter<User> {
         ImageView profilePicture = (ImageView) v.findViewById(R.id.imageView_profile_picture);
         TextView displayName = (TextView) v.findViewById(R.id.textView_name);
         TextView activity = (TextView) v.findViewById(R.id.textView_activity);
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference rootRef = storage.getReference();
+
         Picasso.get()
-                .load(R.drawable.ic_account)
+                .load(storage.getReference().child("images/" + FirebaseAuth.getInstance().getCurrentUser()+"/").getPath())
                 .placeholder(R.drawable.ic_account)
                 .into(profilePicture);
+
+        rootRef.child("images/" + model.getUid() + "/").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get()
+                        .load(uri)
+                        .placeholder(R.drawable.ic_account)
+                        .into(profilePicture);
+            }
+
+        });
+
+
+
         displayName.setText(model.getName());
         activity.setText(model.getActivty());
     }
@@ -40,12 +76,32 @@ public class UsersAdapter extends FirebaseListAdapter<User> {
     public View getView(int position, View view, ViewGroup viewGroup) {
         User user = getItem(position);
         view = activity.getLayoutInflater().inflate(R.layout.item_person, viewGroup, false);
-        view.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-              new  CreateOrJoinNewChat(activity, FirebaseAuth.getInstance().getCurrentUser().getUid(), user.getUid());
-           }
-       });
+        final User[] runner = new User[1];
+        view.findViewById(R.id.btn_send_request).setOnClickListener(v -> {
+            FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String email = dataSnapshot.getValue(User.class).getEmail();
+                            Log.e("efefeg", email);
+                            String activity = dataSnapshot.getValue(User.class).getActivty();
+                            String name = dataSnapshot.getValue(User.class).getName();
+                            String picture = dataSnapshot.getValue(User.class).getPicture();
+                            String uid = dataSnapshot.getValue(User.class).getUid();
+                            String yearsOld = dataSnapshot.getValue(User.class).getYearsOld();
+                            runner[0] = new User(name, email, uid, picture, yearsOld, activity);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                        }
+                    });
+            FirebaseDatabase.getInstance().getReference().child("Notifications").child(user.getUid()).push().setValue(runner[0]);
+        });
+
+
+
+        view.setOnClickListener(v -> new CreateOrJoinNewChat(activity, FirebaseAuth.getInstance().getCurrentUser().getUid(), user.getUid()));
         populateView(view, user, position);
         return view;
     }
@@ -59,4 +115,6 @@ public class UsersAdapter extends FirebaseListAdapter<User> {
     public int getViewTypeCount() {
         return super.getViewTypeCount();
     }
+
 }
+
