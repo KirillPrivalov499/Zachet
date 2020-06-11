@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/relative_layout"
+    android:paddingBottom="12dp"
+    android:background="@drawable/myrect">
+
+    <TextView
+        android:id="@+id/min_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="38dp"
+        android:layout_toEndOf="@+id/tv_average_speed"
+        android:layout_toRightOf="@+id/tv_average_speed"
+        android:text="/km" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pulse"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/tv_heartrate"
+        android:layout_toRightOf="@+id/tv_heartrate"
+        android:text="уд." />
+
+    <TextView
+        android:id="@+id/tv_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="38dp"
+        android:layout_toEndOf="@+id/tv_distance"
+        android:layout_toRightOf="@+id/tv_distance"
+        android:text="m" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="177dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/tv_start_date"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="6dp"
+        android:text="Дневной забег"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_dist"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="7dp"
+        android:text="6840.9"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_moving_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="262dp"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="7dp"
+        android:text="2177"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="10dp"
+        android:text="2020-04-26T16:22:10Z" />
+
+    <TextView
+        android:id="@+id/tv_average_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_temp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="7dp"
+        android:text="5.142"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cadence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_average_speed"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/pulse"
+        android:layout_toRightOf="@+id/pulse"
+        android:text="Каденс"
+        android:textSize="10sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadence"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/tv_average_cadence"
+        android:layout_toRightOf="@+id/tv_average_cadence"
+        android:text="/min" />
+
+    <TextView
+        android:id="@+id/tv_average_cadence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cadence"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="7dp"
+        android:text="82.2"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_heartrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pulse"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="7dp"
+        android:text="——"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/climb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_moving_time"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/cadence"
+        android:layout_toRightOf="@+id/cadence"
+        android:text="Набор"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/metr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/climb"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/tv_elev"
+        android:layout_toRightOf="@+id/tv_elev"
+        android:text="m" />
+
+    <TextView
+        android:id="@+id/tv_elev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/climb"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="262dp"
+        android:layout_marginLeft="262dp"
+        android:layout_marginTop="7dp"
+        android:text="20.2"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginRight="168dp"
+        android:layout_toEndOf="@+id/tv_name"
+        android:layout_toRightOf="@+id/tv_name"
+        android:text="Run" />
+
+    <TextView
+        android:id="@+id/pulse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_distance"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="12dp"
+        android:text="Пульс"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_dist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="12dp"
+        android:textSize="10sp"
+        android:text="Расстояние" />
+
+    <TextView
+        android:id="@+id/tv_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/tv_dist"
+        android:layout_toRightOf="@+id/tv_dist"
+        android:textSize="10sp"
+        android:text="Темп" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="89dp"
+        android:layout_marginLeft="89dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="69dp"
+        android:layout_toEndOf="@+id/tv_temp"
+        android:layout_toRightOf="@+id/tv_temp"
+        android:text="Время"
+        android:textSize="10sp" />
+
+
+</RelativeLayout>

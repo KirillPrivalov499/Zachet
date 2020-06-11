@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewStory.ui.StravaActivity">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/but_auth"
+        style="@style/ButtonLoginRegister"
+        android:layout_width="322dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:text="I agree"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/messageText"
+        android:layout_width="367dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="96dp"
+        android:background="#FF4500"
+        android:text="To start using the GoRun service, you must be registered in the Strava social network. The app will use your profile and activity data."
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView_item_notification"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="189dp">
+
+        <ImageView
+            android:id="@+id/image_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:src="@drawable/ic_close_black_24dp" />
+
+        <ImageView
+            android:id="@+id/not_imageView_profile_picture"
+            android:layout_width="98dp"
+            android:layout_height="93dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="11dp"
+            tools:src="@drawable/ic_account" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_accept"
+            android:layout_width="191dp"
+            android:layout_height="47dp"
+            android:layout_below="@+id/not_imageView_profile_picture"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-99dp"
+            android:layout_marginLeft="-99dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="9dp"
+            android:layout_toEndOf="@+id/not_imageView_profile_picture"
+            android:layout_toRightOf="@+id/not_imageView_profile_picture"
+            android:text="Accept" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/not_textView_name"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/not_imageView_profile_picture"
+            android:text="This athlete wants to train with you" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_no_accept"
+            android:layout_width="181dp"
+            android:layout_height="46dp"
+            android:layout_below="@+id/not_imageView_profile_picture"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-6dp"
+            android:layout_marginLeft="-6dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="9dp"
+            android:layout_toEndOf="@+id/btn_accept"
+            android:layout_toRightOf="@+id/btn_accept"
+            android:text="No accept">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:id="@+id/not_textView_name"
+            android:layout_width="151dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginRight="128dp"
+            android:layout_toEndOf="@id/not_imageView_profile_picture"
+            android:layout_toRightOf="@id/not_imageView_profile_picture"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat"
+            android:textSize="25sp"
+            tools:text="Reso Coder" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

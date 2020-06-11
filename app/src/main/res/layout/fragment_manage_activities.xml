@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewStory.ui.Profile.ChildFragments.ManageActivitiesFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingTop="20dp"
+        android:focusable="true">
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/spinner"
+
+            >
+
+        </androidx.appcompat.widget.AppCompatSpinner>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_activities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/spinner"
+            android:layout_marginTop="27dp" />
+    </RelativeLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>
